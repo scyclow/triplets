@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seltzer Hero — Rosette Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #controls {
+      position: fixed;
+      top: 1em;
+      left: 1em;
+      bottom: 1em;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      align-content: start;
+      align-items: center;
+      gap: 0.4em 1em;
+      padding: 1em;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid #333;
+    }
+
+    #controls h3 {
+      grid-column: 1 / -1;
+      margin: 0.75em 0 0;
+      font-size: 1em;
+      color: #888;
+      font-weight: normal;
+    }
+
+    #stats {
+      grid-column: 1 / -1;
+      color: #888;
+    }
+
+    #config {
+      grid-column: 1 / -1;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: monospace;
+      background: #111;
+      color: #fff;
+      border: 1px solid #333;
+      resize: none;
+    }
+
+    #copy {
+      grid-column: 1 / -1;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div id="controls">
+    <div id="fields" style="display: contents"></div>
+    <div id="stats"></div>
+    <textarea id="config" rows="12" readonly></textarea>
+    <button id="copy">copy config</button>
+  </div>
+
+  <script type="module" src="rosetteLab.js"></script>
+</body>
+</html>

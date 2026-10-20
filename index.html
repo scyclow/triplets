@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seltzer Hero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1em;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #layers {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      align-items: center;
+      gap: 0.5em 1em;
+    }
+
+    #viz, #rosette {
+      width: min(100%, 480px);
+      aspect-ratio: 1;
+      background: #000;
+    }
+
+    #scope {
+      width: 100%;
+      max-width: 800px;
+      border: 1px solid #ccc;
+    }
+
+    #lissajous {
+      width: 240px;
+      border: 1px solid #ccc;
+    }
+
+    button.active {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button id="start">start</button>
+  <div id="layers"></div>
+  <label>
+    bpm
+    <input id="bpm" type="range" min="40" max="300" step="1" value="180">
+    <span id="bpmValue"></span>
+  </label>
+  <label>
+    volume
+    <input id="volume" type="range" min="0" max="10" step="0.01" value="1">
+    <span id="volumeValue"></span>
+  </label>
+  <label>
+    tone
+    <input id="tone" type="range" min="0.25" max="4" step="0.01" value="1">
+    <span id="toneValue"></span>
+  </label>
+
+  <canvas id="viz"></canvas>
+  <canvas id="rosette"></canvas>
+  <canvas id="scope" width="800" height="240"></canvas>
+  <label>
+    x <select id="lissajousX"></select>
+    y <select id="lissajousY"></select>
+  </label>
+  <canvas id="lissajous" width="240" height="240"></canvas>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
